@@ -239,13 +239,12 @@ bool isBinaryTree(node* root /*, int min , int max */)
 {
     if(root== nullptr)
         return true;
-    /*
+
     if(isSubTreeLesser(root->left , root->data) && isSubTreeGreater(root->right , root->data)
     && isBinaryTree(root->left) && isBinaryTree(root->right) )
         return true;
     else
         return false;
-    */
 
     // another way to do using max value and min value.
 }
