@@ -102,7 +102,6 @@ void rear_insert(struct node temp)
 
     if(last==NULL)
     {
-
         last=temp1;
         last = last->next;
         return;
@@ -120,12 +119,13 @@ void rear_insert(struct node temp)
 
 void display()
 {
-    struct node *temp = last->next;
+
     if(last==NULL)
     {
         printf("\nLIST IS EMPTY\n");
         return;
     }
+    struct node *temp = last->next;
     do
     {
         printf("----------------------------------\n");
@@ -147,20 +147,19 @@ void front_deletion()
 
 void middle_deletion(int pos)
 {
-    struct node* itr = last->next;
     if(pos==1)
     {
-        //faulty here
         if(last->next==last)
         {
-            printf("last == last->next\n");
+//            printf("last == last->next\n");
             last= NULL;
             return;
         }
-        printf("in last\n");
+//        printf("in last\n");
         last->next=last->next->next;
         return;
     }
+    struct node* itr = last->next;
     for(int i=1 ; i<= pos - 2 ; i++)
     {
         itr = itr->next;
@@ -168,6 +167,7 @@ void middle_deletion(int pos)
     if(itr->next==last)
     {
         itr->next = last->next;
+        last = itr;
         return;
     }
 
@@ -179,8 +179,9 @@ void rear_deletion()
 {
     struct node* itr = last->next;
     //again it is not working
-    if(itr==last)
+    if(last->next==last)
     {
+//        printf("%d %d\n" , last , last->next);
         last = NULL;
         return;
     }
@@ -190,6 +191,7 @@ void rear_deletion()
     }
 
     itr->next= last->next;
+    last = itr;
 }
 
 
