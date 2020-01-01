@@ -27,6 +27,8 @@ void heapsort(int*a , int n){
     //deletion of root node
     for(int i=n-1 ; i>=0 ; i--){
         swap(a[0] ,a[i]);
+        //now size of heap is equal to i only and 
+        //we have to again heapify wrt root i.e. pos 0
         heapify(a , i , 0);
     }
 
