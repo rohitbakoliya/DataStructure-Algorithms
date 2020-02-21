@@ -5,7 +5,7 @@ LANG: C++
 */
 #include<bits/stdc++.h>
 using namespace std;
-#define sz(a) int((a).size())
+#define sz(a) (a.size())
 #define int long long
 #define FAST ios_base::sync_with_stdio(false) , cin.tie(NULL);
 #define all(c) c.begin(), c.end()
